@@ -1,0 +1,120 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Navbar with login button in the top-right corner -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+    <div class="container">
+        <div class="collapse navbar-collapse justify-content-end">
+            <a href="/Account/Login" class="btn btn-custom-login">Login</a>
+            <a href="/Account/Register" class="btn btn-custom-login">Register</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Full-screen hero section with background and centered content -->
+<div class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div class="hero-content">
+        <h1 class="display-3 text-light mb-4">Welcome to My Website</h1>
+        <p>
+            <img src="https://i.pinimg.com/564x/c6/16/f8/c616f81c88188b4124286839cc774230.jpg" alt="Logo" class="hero-logo" />
+        </p>
+        <p class="lead text-light">Explore amazing content and features</p>
+        <a href="/Movies" class="btn btn-outline-light btn-lg mt-3">Get Started</a>
+    </div>
+</div>
+
+<!-- Add CSS styles -->
+<style>
+    /* Navbar styling */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    /* Custom Login Button styling */
+    .btn-custom-login {
+        background-color: #764ba2; /* Màu nền tím */
+        color: #fff; /* Màu chữ trắng */
+        padding: 8px 20px;
+        border-radius: 30px;
+        border: none; /* Loại bỏ viền */
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-custom-login:hover {
+            background-color: #5a3d7a; /* Màu nền khi hover */
+            color: #fff; /* Màu chữ khi hover */
+        }
+
+    /* Hero section styling with a background image */
+    .hero-section {
+        background-image: url('https://i.pinimg.com/564x/93/df/15/93df1560097eedb72743d4824ff91fe5.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        text-align: center;
+        opacity: 0; /* Start off invisible */
+        transition: opacity 1.5s ease-in-out; /* Fade-in effect */
+    }
+
+        .hero-content.visible {
+            opacity: 1; /* Fully visible */
+        }
+
+    .hero-logo {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+        .hero-logo:hover {
+            transform: scale(1.1);
+        }
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    p.lead {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.25rem;
+        margin-top: 20px;
+    }
+
+    /* Button styling */
+    .btn-outline-light {
+        border: 2px solid white;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .btn-outline-light:hover {
+            background-color: white;
+            color: #333;
+        }
+</style>
+
+<script>
+    // Add the 'visible' class to trigger the fade-in effect
+    document.addEventListener("DOMContentLoaded", function () {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.classList.add('visible');
+    });
+</script>
